@@ -12,15 +12,15 @@
     "description": "tgtd is a user-space daemon that provides SCSI target support."
   },
   "spdk": {
-    "repo": "https://github.com/longhorn/spdk.git",
-    "commit": "92048fc6021b1453b1b9dff64d940ae75f3b578a",
-    "tag": "v25.09.0+3",
+    "repo": "https://github.com/linkpoolio/spdk.git",
+    "commit": "6e6cc7450f827003d33d5bce9d310990897a4f7f",
+    "tag": "v26.01.0+linkpool.1",
     "description": "SPDK is a storage performance development kit."
   },
   "go-spdk-helper": {
-    "repo": "https://github.com/longhorn/go-spdk-helper.git",
-    "commit": "49b12f8b468b698570e79b9f401068d0ada9123e",
-    "tag": "v0.6.0",
+    "repo": "https://github.com/linkpoolio/go-spdk-helper.git",
+    "commit": "6718763ebcb03531f4509edd1ca7dd7418b36e69",
+    "tag": "feat-v2-rdma-transport",
     "description": "go-spdk-helper is a Go wrapper for SPDK."
   },
   "libjsonc": {
