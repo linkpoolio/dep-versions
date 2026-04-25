@@ -44,12 +44,12 @@ pip3 install -r ./scripts/pkgdep/requirements.txt
 # Build and install based on architecture
 case "$ARCH" in
     amd64)
-        ./configure --target-arch=nehalem --disable-tests --disable-unit-tests --disable-examples --with-ublk --with-rdma --enable-debug
+        ./configure --target-arch=nehalem --disable-tests --disable-unit-tests --disable-examples --with-ublk --with-rdma=mlx5_dv --enable-debug
         make -j"$(nproc)"
         make install
         ;;
     arm64)
-        CFLAGS="-march=armv8-a" CC="gcc-13" ./configure --target-arch=armv8-a --disable-tests --disable-unit-tests --disable-examples --with-ublk --with-rdma --enable-debug
+        CFLAGS="-march=armv8-a" CC="gcc-13" ./configure --target-arch=armv8-a --disable-tests --disable-unit-tests --disable-examples --with-ublk --with-rdma=mlx5_dv --enable-debug
         DPDKBUILD_FLAGS="-Dplatform=generic" make -j"$(nproc)"
         make install
         ;;
