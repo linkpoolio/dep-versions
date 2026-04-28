@@ -13,8 +13,8 @@
   },
   "spdk": {
     "repo": "https://github.com/linkpoolio/spdk.git",
-    "commit": "fafb93b6bf5599511d4ee66c4d9b3bffa001cda2",
-    "tag": "v26.01.0+linkpool.7-mlx5-rdma-domain-guard",
+    "commit": "93e72058009d1f2654149ea8bf9fbf6133589a2f",
+    "tag": "v26.01.0+linkpool.8-blob-cluster-alloc-cap",
     "description": "SPDK is a storage performance development kit."
   },
   "go-spdk-helper": {
