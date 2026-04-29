@@ -13,8 +13,8 @@
   },
   "spdk": {
     "repo": "https://github.com/linkpoolio/spdk.git",
-    "commit": "d7341d0e0c08e301c016588dc6b4e47d6f086b79",
-    "tag": "v26.01.0+linkpool.13-shallow-copy-pipeline",
+    "commit": "448bd154e",
+    "tag": "v26.01.0+linkpool.14-bdev-write-zeroes-rpc",
     "description": "SPDK is a storage performance development kit."
   },
   "go-spdk-helper": {
