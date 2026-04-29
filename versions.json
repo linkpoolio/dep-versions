@@ -13,8 +13,8 @@
   },
   "spdk": {
     "repo": "https://github.com/linkpoolio/spdk.git",
-    "commit": "b878e3a4e",
-    "tag": "v26.01.0+linkpool.15-detach-timeout",
+    "commit": "d39f371f3",
+    "tag": "v26.01.0+linkpool.16-tcp-qpair-uaf-fix",
     "description": "SPDK is a storage performance development kit."
   },
   "go-spdk-helper": {
