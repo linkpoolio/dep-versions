@@ -19,8 +19,8 @@
   },
   "go-spdk-helper": {
     "repo": "https://github.com/linkpoolio/go-spdk-helper.git",
-    "commit": "8c64226a8d15a78c118e56d7bbb06aff16afa6b0",
-    "tag": "feat-v2-rdma-transport",
+    "commit": "d8bd1be9b74daa3f730aac40f869c13de8cd060b",
+    "tag": "rebase-main",
     "description": "go-spdk-helper is a Go wrapper for SPDK."
   },
   "libjsonc": {
