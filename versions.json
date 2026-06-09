@@ -19,8 +19,8 @@
   },
   "go-spdk-helper": {
     "repo": "https://github.com/linkpoolio/go-spdk-helper.git",
-    "commit": "d8bd1be9b74daa3f730aac40f869c13de8cd060b",
-    "tag": "rebase-main",
+    "commit": "8002e3abaf322fc7011555fd2d00590089674170",
+    "tag": "rebase/main branch (no tag)",
     "description": "go-spdk-helper is a Go wrapper for SPDK."
   },
   "libjsonc": {
