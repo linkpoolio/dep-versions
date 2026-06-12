@@ -13,13 +13,13 @@
   },
   "spdk": {
     "repo": "https://github.com/linkpoolio/spdk.git",
-    "commit": "d4b8dfc07ba2573840d36c942d969bcbbf0a59dc",
-    "tag": "v26.01.0+linkpool.21-connect-poller-uaf-fix",
+    "commit": "6b8ece9af6c3b522bc2197e9d1f5bc89cef885bb",
+    "tag": "v26.01.0+linkpool.22-teardown-crash-consistency",
     "description": "SPDK is a storage performance development kit."
   },
   "go-spdk-helper": {
     "repo": "https://github.com/linkpoolio/go-spdk-helper.git",
-    "commit": "8002e3abaf322fc7011555fd2d00590089674170",
+    "commit": "a85ac4f34ff7958cf9d7bb2d9eb71e9c6714e59a",
     "tag": "rebase/main branch (no tag)",
     "description": "go-spdk-helper is a Go wrapper for SPDK."
   },
