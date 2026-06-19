@@ -13,8 +13,8 @@
   },
   "spdk": {
     "repo": "https://github.com/linkpoolio/spdk.git",
-    "commit": "ab92a284834b7eb00bebab78a8a1c926bd8774bd",
-    "tag": "v26.01.0+linkpool.31-bdev-list-scaffolding-cleanup",
+    "commit": "00e79bcaae6c6ff47dfa4ac0b454013fe53fb3dd",
+    "tag": "v26.01.0+linkpool.32-raid-faulty-state-teardown-uaf",
     "description": "SPDK is a storage performance development kit."
   },
   "go-spdk-helper": {
