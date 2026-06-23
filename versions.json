@@ -109,9 +109,9 @@
     },
     "longhorn-types": {
       "repo": "https://github.com/linkpoolio/types.git",
-      "branch": "feat/v2-rdma-transport",
-      "commit": "dc073dc",
-      "note": "Proto/gRPC types. Additive fields only (wire-compatible). Pseudoversion v0.0.0-20260610091928-a08cb4ff0b7a consumed by IM/manager."
+      "branch": "rebase/main",
+      "commit": "a08cb4ff0b7a",
+      "note": "Proto/gRPC types. The IM/manager go.mod replace points at linkpoolio/types@a08cb4ff0b7a (pseudoversion v0.0.0-20260610091928-a08cb4ff0b7a), the rebase/main tip. Additive fields only (wire-compatible). NOTE: the feat/v2-rdma-transport branch (dc073dc) is a divergent alternative line and is NOT what is vendored."
     },
     "go-common-libs": {
       "repo": "https://github.com/linkpoolio/go-common-libs.git",
