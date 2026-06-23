@@ -86,5 +86,44 @@
   "support-bundle-kit": {
     "repo": "https://github.com/rancher/support-bundle-kit.git",
     "tag": "v0.0.79"
+  },
+  "components": {
+    "description": "Single source of truth for the Go-module forks vendored into the longhorn-manager and longhorn-instance-manager images. Unlike the infra entries above (which the IM Dockerfile clones and builds directly), these are recorded here only for traceability — the actual pin is the go.mod `replace` directive in each consumer repo. Keep in lockstep when bumping. SHAs below are the convergent set for the IM .110 / manager .35 build.",
+    "longhorn-manager": {
+      "repo": "https://github.com/linkpoolio/longhorn-manager.git",
+      "branch": "fix/allow-ctrlr-loss-minus-one",
+      "commit": "78ff2fce6",
+      "note": "Deployed as image tag v1.11.1-linkpool.35. Contains ctrlr-loss-(-1), dead-spdk_tgt probe, XFS resize gate, PR-A go-common-libs exec SIGKILL, pod-kick (cherry-pick of d81d433d4), force-delete hardening."
+    },
+    "longhorn-instance-manager": {
+      "repo": "https://github.com/linkpoolio/longhorn-instance-manager.git",
+      "branch": "rebase/main",
+      "commit": "6cce8cab",
+      "note": "Deployed as image tag v1.11.1-linkpool.110. Bundles spdk (linkpool.35), longhorn-spdk-engine (357b8fa), go-spdk-helper (b6ea1c9 library), types (a08cb4f), go-common-libs (fea5f24) via flattened vendor. go-spdk-helper CLI binary built from the go-spdk-helper entry above (a48cde4)."
+    },
+    "longhorn-spdk-engine": {
+      "repo": "https://github.com/linkpoolio/longhorn-spdk-engine.git",
+      "branch": "rebase/main",
+      "commit": "357b8facb51e",
+      "note": "Vendored into IM (357b8fa) and manager (held at 6ea821a — manager does not run enginefrontend.Suspend). EF observer, dead-device probe on Suspend+prepareExpansion, teardown-wedge, RDMA transport, persistence."
+    },
+    "longhorn-types": {
+      "repo": "https://github.com/linkpoolio/types.git",
+      "branch": "feat/v2-rdma-transport",
+      "commit": "dc073dc",
+      "note": "Proto/gRPC types. Additive fields only (wire-compatible). Pseudoversion v0.0.0-20260610091928-a08cb4ff0b7a consumed by IM/manager."
+    },
+    "go-common-libs": {
+      "repo": "https://github.com/linkpoolio/go-common-libs.git",
+      "branch": "fix/execute-timeout-kills-child",
+      "commit": "fea5f24900807f4b6d60ced1da78b6ea803ae6d2",
+      "note": "Fork of longhorn/go-common-libs. Single change: executeCmd SIGKILLs the child process on timeout (closes the orphan hole). Branched from upstream 1e84fa7 (the commit go-spdk-helper/spdk-engine already pinned; IM/manager pin c0739cd — source-identical, only a deps digest differs)."
+    },
+    "go-spdk-helper": {
+      "repo": "https://github.com/linkpoolio/go-spdk-helper.git",
+      "branch": "fix/suspend-on-dead-on-rebase-main",
+      "commit": "34f6939",
+      "note": "Library pin in IM go.mod is b6ea1c9 (pre-this-tag); CLI binary built from the top-level go-spdk-helper entry (a48cde4). The 34f6939 tip adds the go-common-libs replace but the IM's flattened vendor provides the exec fix regardless of this pin. Bump IM's go.mod helper pin to 34f6939 for consistency in a follow-up."
+    }
   }
 }
