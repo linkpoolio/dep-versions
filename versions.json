@@ -13,14 +13,14 @@
   },
   "spdk": {
     "repo": "https://github.com/linkpoolio/spdk.git",
-    "commit": "0277e688d24433926af53e6cf403f6c01b450bc5",
-    "tag": "v26.01.0+linkpool.38",
+    "commit": "12cb765ae325ddba536be138bb381d6f725315da",
+    "tag": "v26.05.0+linkpool.1",
     "description": "SPDK is a storage performance development kit."
   },
   "go-spdk-helper": {
     "repo": "https://github.com/linkpoolio/go-spdk-helper.git",
-    "commit": "a48cde4ac04081118c8dfe73f56ba949520d58ce",
-    "tag": "rebase/main branch (no tag)",
+    "commit": "79ed23481fc141e5589d64c6c832ae8a10afcdb3",
+    "tag": "reset/main branch (no tag)",
     "description": "go-spdk-helper is a Go wrapper for SPDK."
   },
   "libjsonc": {
@@ -88,7 +88,7 @@
     "tag": "v0.0.79"
   },
   "components": {
-    "description": "Single source of truth for the Go-module forks vendored into the longhorn-manager and longhorn-instance-manager images. Unlike the infra entries above (which the IM Dockerfile clones and builds directly), these are recorded here only for traceability — the actual pin is the go.mod `replace` directive in each consumer repo. Keep in lockstep when bumping. SHAs below are the convergent set for the IM .110 / manager .35 build.",
+    "description": "Single source of truth for the Go-module forks vendored into the longhorn-manager and longhorn-instance-manager images. Unlike the infra entries above (which the IM Dockerfile clones and builds directly), these are recorded here only for traceability \u2014 the actual pin is the go.mod `replace` directive in each consumer repo. Keep in lockstep when bumping. SHAs below are the convergent set for the IM .110 / manager .35 build.",
     "longhorn-manager": {
       "repo": "https://github.com/linkpoolio/longhorn-manager.git",
       "branch": "fix/allow-ctrlr-loss-minus-one",
@@ -105,7 +105,7 @@
       "repo": "https://github.com/linkpoolio/longhorn-spdk-engine.git",
       "branch": "rebase/main",
       "commit": "357b8facb51e",
-      "note": "Vendored into IM (357b8fa) and manager (held at 6ea821a — manager does not run enginefrontend.Suspend). EF observer, dead-device probe on Suspend+prepareExpansion, teardown-wedge, RDMA transport, persistence."
+      "note": "Vendored into IM (357b8fa) and manager (held at 6ea821a \u2014 manager does not run enginefrontend.Suspend). EF observer, dead-device probe on Suspend+prepareExpansion, teardown-wedge, RDMA transport, persistence."
     },
     "longhorn-types": {
       "repo": "https://github.com/linkpoolio/types.git",
@@ -117,7 +117,7 @@
       "repo": "https://github.com/linkpoolio/go-common-libs.git",
       "branch": "fix/execute-timeout-kills-child",
       "commit": "fea5f24900807f4b6d60ced1da78b6ea803ae6d2",
-      "note": "Fork of longhorn/go-common-libs. Single change: executeCmd SIGKILLs the child process on timeout (closes the orphan hole). Branched from upstream 1e84fa7 (the commit go-spdk-helper/spdk-engine already pinned; IM/manager pin c0739cd — source-identical, only a deps digest differs)."
+      "note": "Fork of longhorn/go-common-libs. Single change: executeCmd SIGKILLs the child process on timeout (closes the orphan hole). Branched from upstream 1e84fa7 (the commit go-spdk-helper/spdk-engine already pinned; IM/manager pin c0739cd \u2014 source-identical, only a deps digest differs)."
     },
     "go-spdk-helper": {
       "repo": "https://github.com/linkpoolio/go-spdk-helper.git",

@@ -34,12 +34,19 @@ cd "$SRC_DIR"
 git checkout "$SPDK_COMMIT_ID"
 git submodule update --init
 
-# Modify package dependency script for SLES
-sed -i '/python3-pyelftools/d' ./scripts/pkgdep/sles.sh
+# The SLES BCI repos do not ship python3-pyelftools; drop only that package
+# (pyelftools comes from the SPDK python venv instead). A whole-line delete
+# would also remove ninja/meson from the same zypper line on v26.05.
+sed -i 's/python3-pyelftools//' ./scripts/pkgdep/sles.sh
 
-# Install dependencies
+# Install dependencies. pkgdep sets up the SPDK python venv (PEP668), which
+# carries the build-time python deps: jinja2/tabulate for genrpc, meson/ninja
+# and pyelftools for DPDK.
 ./scripts/pkgdep.sh --uring
-pip3 install -r ./scripts/pkgdep/requirements.txt
+
+# The build below runs in this same shell: activate the venv so genrpc.py and
+# meson resolve to the venv's python environment.
+source /var/spdk/dependencies/pip/bin/activate
 
 # Build and install based on architecture
 case "$ARCH" in
