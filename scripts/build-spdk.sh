@@ -34,10 +34,11 @@ cd "$SRC_DIR"
 git checkout "$SPDK_COMMIT_ID"
 git submodule update --init
 
-# The SLES BCI repos do not ship python3-pyelftools; drop only that package
-# (pyelftools comes from the SPDK python venv instead). A whole-line delete
-# would also remove ninja/meson from the same zypper line on v26.05.
-sed -i 's/python3-pyelftools//' ./scripts/pkgdep/sles.sh
+# The SLES BCI repos ship neither python3-pyelftools nor python311-pyelftools;
+# drop only those packages (pyelftools comes from the SPDK python venv
+# instead). A whole-line delete would also remove ninja/meson from the same
+# zypper line on v26.05.
+sed -i -E 's/python3(11)?-pyelftools//g' ./scripts/pkgdep/sles.sh
 
 # Install dependencies. pkgdep sets up the SPDK python venv (PEP668), which
 # carries the build-time python deps: jinja2/tabulate for genrpc, meson/ninja
